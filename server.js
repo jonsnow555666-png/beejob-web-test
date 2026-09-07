@@ -2,7 +2,10 @@ const http = require("http");
 
 const port = process.env.PORT || 3000;
 const release = process.env.RELEASE_NAME || "A";
-
+if (process.env.BEEJOB_FAIL_STARTUP === "true") {
+  console.error("Intentional Production startup failure test");
+  process.exit(1);
+}
 const server = http.createServer((req, res) => {
   if (req.url === "/health") {
     res.writeHead(200, { "Content-Type": "application/json" });
