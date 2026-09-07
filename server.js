@@ -1,7 +1,7 @@
 const http = require("http");
 
 const port = process.env.PORT || 3000;
-const release = process.env.RELEASE_NAME || "A";
+const release = process.env.RELEASE_NAME || "B";
 if (process.env.BEEJOB_FAIL_STARTUP === "true") {
   console.error("Intentional Production startup failure test");
   process.exit(1);
